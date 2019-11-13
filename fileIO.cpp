@@ -90,8 +90,10 @@ void readFile(std::string filename) {
 	}
 	file >> std::noskipws;
 
-	while (!file.eof()) {
+	while (true) {
 		file >> c;
+		if (file.eof())
+			break;
 		std::cout << c;
 	}
 
